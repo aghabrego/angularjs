@@ -1,6 +1,5 @@
 // Creacion de mudulo
-var app = angular.module("myFirstApp", []);
-// ngResource consume app REST
+var app = angular.module("myFirstApp", []); // Aqui se puede agregar ngResource que consume app REST
 
 // Creacion de controlador
 app.controller("firstController", ["$scope", function(e) { // Objeto scope
