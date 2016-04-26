@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!-- ng-app esto indica que se esta utilizando una aplicacion Angularjs -->
+<!--Referenciando modulo myFirstApp-->
+<html ng-app="filter">
+<head>
+	<meta charset="utf-8"/>
+	<title>Hola Mundo con AngularJS</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body ng-controller="filterController">
+	<!-- Filter personalizado -->
+	<p>{{ mi_html.cuerpo | removerHtml }}</p>
+	<!-- Filter default -->
+	<p>{{ mi_html | json }}</p>
+	<p> {{ costo | currency: '$' }}</p>
+</body>
+</html>
