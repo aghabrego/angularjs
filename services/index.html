@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!-- ng-app esto indica que se esta utilizando una aplicacion Angularjs -->
+<!--Referenciando modulo toDoList-->
+<html ng-app="toDoList">
+<head>
+	<meta charset="utf-8"/>
+	<title>Hola Mundo con AngularJS</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="../bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body ng-controller="toDoController">
+	<ul>
+		<li ng-repeat="actividad in todo">
+			{{ actividad.descripcion }} - 
+			{{ actividad.fecha | date: 'short' }} - <a href="#" ng-click="removeActv(actividad)">X</a>
+		</li>
+	</ul>
+
+	<form ng-submit="addActv()">
+		<input type="text" ng-model="newActv.descripcion"></input>
+		<input type="date" ng-model="newActv.fecha"></input>
+		<input type="submit" value="Guardar"></input>
+	</form>
+
+	<button ng-click="clean()">Limpiar</button>
+</body>
+</html>
