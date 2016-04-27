@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- ng-app esto indica que se esta utilizando una aplicacion Angularjs -->
+<!--Referenciando modulo httpcontroller-->
+<html ng-app="httpcontroller">
+<head>
+	<meta charset="utf-8"/>
+	<title>Hola Mundo con AngularJS</title>
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="controller.js"></script>
+</head>
+<body ng-controller="firstController">
+	<div ng-show="loading">Cargando...</div>
+	<div ng-show="!loading && posts.length <= 0">No se encontro resultado</div>
+
+	<ul ng-hide="posts.length <= 0">
+		<li ng-repeat="post in posts">
+			<h1>{{ post.title }}</h1>
+			<p>{{ post.body }}</p>
+		</li>
+	</ul>
+</body>
+</html>
