@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- ng-app esto indica que se esta utilizando una aplicacion Angularjs -->
-<!--Referenciando modulo myFirstApp-->
+<!--Referenciando modulo toDoList-->
 <html ng-app="toDoList">
 <head>
 	<meta charset="utf-8"/>
@@ -13,7 +13,7 @@
 	<ul>
 		<li ng-repeat="actividad in todo">
 			{{ actividad.descripcion }} - 
-			{{ actividad.fecha | date: 'short' }}
+			{{ actividad.fecha | date: 'short' }} - <a href="#" ng-click="removeActv(actividad)"></a>
 		</li>
 	</ul>
 
